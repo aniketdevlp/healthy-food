@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Results</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Recipe Results</h1>
+
+    <% if (recipes.length === 0) { %>
+      <p>No recipes found.</p>
+    <% } else { %>
+      <ul>
+        <% recipes.forEach(recipe => { %>
+          <li><strong><%= recipe.title %></strong> — <%= recipe.carbs %> carbs</li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <form action="/" method="GET">
+      <button type="submit">Search Again</button>
+    </form>
+  </div>
+</body>
+</html>
